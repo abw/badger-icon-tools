@@ -1,0 +1,73 @@
+{
+  "name": "@abw/badger-icon-tools",
+  "version": "0.0.3",
+  "description": "Tools for creating icon libraries for badger-icon",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/badger-icon-tools.umd.cjs",
+  "module": "./dist/badger-icon-tools.js",
+  "exports": {
+    ".": {
+      "import": "./dist/badger-icon-tools.js",
+      "require": "./dist/badger-icon-tools.umd.cjs"
+    }
+  },
+  "author": "Andy Wardley",
+  "licence": "ISC",
+  "keywords": [
+    "react"
+  ],
+  "scripts": {
+    "dev": "vite --config vite.docs.js",
+    "test": "vitest --ui --coverage",
+    "build": "$npm_execpath build:lib && $npm_execpath build:docs",
+    "build:lib": "vite build",
+    "build:docs": "vite build --config vite.docs.js",
+    "preview": "vite preview --config vite.docs.js",
+    "lint": "eslint 'lib/**/*.{js,jsx}' 'src/**/*.{js,jsx}'",
+    "icons": "svg-icon-librarian -f icons/config.yaml -c icons/custom -o lib/iconlib.js -y"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abw/badger-icon-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abw/badger-icon-tools/issues"
+  },
+  "dependencies": {
+    "@abw/badger": "^1.2.1",
+    "@abw/badger-codecs": "^1.0.3",
+    "@abw/badger-filesystem": "^1.0.5",
+    "@abw/badger-utils": "^1.0.21",
+    "@iconify/tools": "^3.0.6"
+  },
+  "devDependencies": {
+    "@abw/badger-css": "^0.2.8",
+    "@abw/badger-react-ui": "^0.0.1",
+    "@abw/badger-timestamp": "^1.0.4",
+    "@abw/react-context": "^2.0.3",
+    "@abw/react-night-and-day": "^0.0.6",
+    "@abw/svg-icon-librarian": "^1.0.9",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.1.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.1.1",
+    "@vitest/coverage-v8": "^0.34.6",
+    "@vitest/ui": "^0.34.6",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react": "^7.33.2",
+    "jsdom": "^22.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "sass": "^1.69.5",
+    "vite": "^4.5.0",
+    "vite-jsconfig-paths": "^2.0.1",
+    "vite-plugin-svgr": "^4.1.0",
+    "vitest": "^0.34.6"
+  }
+}
