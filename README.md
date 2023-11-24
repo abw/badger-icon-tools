@@ -10,13 +10,13 @@ using your favourite package manager.
 
 ```bash
 ## using npm
-$ npm add @abw/badger-icons-tools
+$ npm add @abw/badger-icon-tools
 
 ## using yarn
-$ yarn add @abw/badger-icons-tools
+$ yarn add @abw/badger-icon-tools
 
 ## using pnpm
-$ pnpm add @abw/badger-icons-tools
+$ pnpm add @abw/badger-icon-tools
 ```
 
 TODO
