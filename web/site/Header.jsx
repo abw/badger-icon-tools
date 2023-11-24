@@ -14,7 +14,7 @@ const Header = () => {
           <Icon
             name="bars"
             className="toggle-sidebar action"
-            onClick={() => setVariant(variant === SIDEBAR ? NO_SIDEBAR : SIDEBAR)}
+            onClick={() => setVariant(variant === NO_SIDEBAR ? SIDEBAR : NO_SIDEBAR)}
           />
           <Link to="/" className="home mar-l-2" text="Badger Icon Tools"/>
           <span className="small mar-l-2">v{VERSION}</span>
