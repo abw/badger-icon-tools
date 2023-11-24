@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import jsconfigPaths    from 'vite-jsconfig-paths'
-import react            from '@vitejs/plugin-react'
-import define           from  './vite.defs.js'
+import { defineConfig }  from 'vite'
+import jsconfigPaths     from 'vite-jsconfig-paths'
+import react             from '@vitejs/plugin-react'
+import define            from  './vite.defs.js'
 
 const NAME   = `badger-icon-tools`
 const MODULE = `abw/${NAME}`
@@ -28,6 +28,22 @@ export default defineConfig({
       fileName: NAME,
     },
     rollupOptions: {
+      external: [
+        '@abw/badger',
+        '@abw/badger-filesystem',
+        '@abw/badger-codecs',
+        '@abw/badger-utils',
+        'node:crypto',
+      ],
+      output: {
+        globals: {
+          '@abw/badger': 'badger',
+          '@abw/badger-utils': 'badgerUtils',
+          '@abw/badger-filesystem': 'badgerFilesystem',
+          '@abw/badger-codecs': 'badgerCodecs',
+          'node:crypto': 'crypto'
+        },
+      },
     },
   },
 })
