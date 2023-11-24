@@ -1,0 +1,65 @@
+#site {
+  --sidebar-width:    #{$sidebar-width};
+  --sidebar-padding:  #{$sidebar-padding};
+  --sidebar-margin-left: 0;
+  position: relative;
+  color: var(--body-text);
+  background-color: var(--body-back);
+  & > header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+    z-index: 100;
+    box-shadow: 0 4px 3px -2px var(--top-shadow);
+  }
+  & > header > nav {
+    color: var(--header-text);
+    background-color: var(--header-back);
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    font-size: $size-large;
+    line-height: 1rem;
+    border-bottom: 1px solid var(--header-border);
+    a:not(button, .button), .action, .night-and-day--switcher {
+      transition: color 0.5s;
+      text-decoration: none;
+      color: var(--header-link);
+      cursor: pointer;
+      &:hover {
+        transition: color 0.1s;
+        color: var(--header-hover);
+      }
+    }
+  }
+  & > footer {
+    color: var(--footer-text);
+    background-color: var(--footer-back);
+    padding: 1rem;
+    border-top: 1px solid var(--footer-border);
+    box-shadow: inset 0 1px 1px var(--top-shadow);
+    a {
+      color: var(--footer-link);
+      &:hover {
+        color: var(--footer-hover);
+      }
+    }
+  }
+  &.no-sidebar {
+    --sidebar-margin-left: -320px;
+    & > header > nav .toggle-sidebar.action {
+      transition: opacity 0.5s;
+      opacity: 0.4;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+* {
+  scroll-margin-top: $header-height + 8px;
+}

@@ -1,0 +1,192 @@
+$codeblock-radius:            4px;
+$codeblock-back-light:      $grey-95;
+$codeblock-back-dark:       $grey-5;
+$codeblock-back-light-from:  rgba($codeblock-back-light, 0);
+$codeblock-back-light-to:    rgba($codeblock-back-light, 0.9);
+$codeblock-back-dark-from:   rgba($codeblock-back-dark, 0);
+$codeblock-back-dark-to:     rgba($codeblock-back-dark, 0.9);
+
+:where(html) {
+  // code
+  --code-back:            var(--grey40-95);
+  --code-text:            var(--grey40-40);
+  --code-border:          var(--grey40-85);
+    // codeblock
+  --codeblock-back:       var(--grey-95);
+  --codeblock-text:       var(--grey-50);
+  --codeblock-caption:    var(--grey-20);
+  --codeblock-border:     var(--grey20-75);
+  --codeblock-back-from:  #{$codeblock-back-light-from};
+  --codeblock-back-to:    #{$codeblock-back-light-to};
+  --output-back:          var(--grey-100);
+  --output-border:        var(--codeblock-border);
+  --output-text:          var(--grey-30);
+  --expand-back:          var(--brand-85);
+  --expand-text:          var(--grey40-30);
+  --expand-hover-back:    var(--brand-80);
+  --copied-back:          var(--green-40);
+  --copied-text:          var(--green-90);
+}
+#{$dark-theme} {
+  // code
+  --code-back:            var(--grey20-25);
+  --code-text:            var(--grey40-90);
+  --code-border:          var(--grey20-20);
+  // codeblock
+  --codeblock-back:       var(--grey-5);
+  --codeblock-text:       var(--grey40-80);
+  --codeblock-caption:    var(--grey-70);
+  --codeblock-border:     var(--grey20-20);
+  --codeblock-back-from:  #{$codeblock-back-dark-from};
+  --codeblock-back-to:    #{$codeblock-back-dark-to};
+  --output-back:          var(--grey-0);
+  --output-border:        var(--codeblock-border);
+  --output-text:          var(--grey-70);
+  --expand-back:          var(--grey40-25);
+  --expand-text:          var(--brand-70);
+  --expand-hover-back:    var(--brand-35);
+  --copied-back:          var(--green-40);
+  --copied-text:          var(--green-90);
+}
+
+code:not(.codeblock code):not(.toc code) {
+  color: var(--code-text);
+  background-color: var(--code-back);
+  border: 1px solid var(--code-border);
+  padding: 0 4px;
+  border-radius: 4px;
+  text-wrap: nowrap;
+}
+
+div.example {
+  margin-bottom: 2rem;
+  div.source {
+    max-width: 100%;
+  }
+  div.interim {
+    margin-block-start: 2rem;
+    margin-block-end: 1rem;
+  }
+}
+
+div.source {
+  overflow: visible;
+  overflow-x: scroll;
+  // box-shadow: var(--shadow-3);
+}
+div.codeblock,
+div.output {
+  position: relative;
+  border-radius: 4px;
+  // max-width: 50%;
+  // box-shadow: var(--shadow-3);
+  h4.caption {
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: normal;
+    top: 0.25rem;
+    right: 0.75rem;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+}
+
+div.codeblock {
+  font-size: 0.9rem;
+  padding: 0;
+  padding-bottom: 1.5rem;
+  overflow: visible;
+  color: var(--codeblock-text);
+  background-color: var(--codeblock-back);
+  border: 1px solid var(--codeblock-border);
+  &.expandable {
+    //background-color: rgba(43, 43, 43);
+  }
+  pre {
+    border-radius: $codeblock-radius;
+    margin: 0 !important;
+    max-height: 18rem;
+    overflow-y: scroll;
+    transition: all 0.5s;
+  }
+  h4.caption {
+    color: var(--codeblock-caption);
+  }
+  div.controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, var(--codeblock-back-from) 0%, var(--codeblock-back-to) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0;
+    // margin: 0 -1px -1px -1px;
+    border-radius: 0 0 $codeblock-radius $codeblock-radius;
+    padding: 2rem 0 0 0;
+  }
+  .expand, .clipboard {
+    font-size: 0.8rem;
+    color: var(--codeblock-caption);
+    // background-color: hsla(var(--brand-hue), 90%, 30%, 0.8);
+    color: var(--expand-text);
+    background-color: var(--expand-back);
+    opacity: 0.7;
+    padding: 0.25em 0.5em;
+    margin: 0;
+    min-width: 11ch;
+    text-align: center;
+    transition: all 1s;
+    user-select: none;
+    &:hover {
+      opacity: 1;
+      transition: all 0.2s;
+      background-color: var(--expand-hover-back);
+      // background-color: hsla(var(--brand-hue), 50%, 50%, 0.9);
+      cursor: pointer;
+    }
+  }
+  .expand {
+    left: 0%;
+    border-radius: 0 $codeblock-radius 0 $codeblock-radius;
+  }
+  .clipboard {
+    right: 0rem;
+    border-radius: $codeblock-radius 0 $codeblock-radius 0;
+    transition: all 1s;
+    &.copied {
+      color: var(--copied-text);
+      background-color: var(--copied-back);
+      cursor: pointer;
+    }
+  }
+  &.fixed-open {
+    .expand {
+      visibility: hidden;
+    }
+  }
+  &.expanded {
+    padding-bottom: 1.5rem;
+    // overflow: visible;
+    div.controls {
+      background: transparent;
+    }
+    pre {
+      max-height: 250rem;
+      transition: all 0.5s;
+    }
+  }
+}
+div.output {
+  position: relative;
+  // box-shadow: var(--shadow-3);
+  background-color: var(--output-back);
+  border: 1px solid var(--output-border);
+  padding: 2rem 2rem;
+  h4.caption {
+    color: var(--output-text);
+    // hsl($dev-hue, 40%, 30%);
+  }
+}

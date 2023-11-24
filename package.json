@@ -1,6 +1,6 @@
 {
   "name": "@abw/badger-icon-tools",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "Tools for creating icon libraries for badger-icon",
   "type": "module",
   "files": [

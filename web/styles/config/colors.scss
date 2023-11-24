@@ -1,0 +1,74 @@
+:where(html) {
+  --body-back:        var(--grey-100);
+  --body-text:        var(--grey-20);
+  --bold-text:        var(--grey-10);
+  --head-text:        var(--grey-10);
+  --link-text:        var(--brand-50);
+  --link-hover:       var(--brand-40);
+  --side-shadow:      rgba(0, 0, 0, 0.04);
+  --top-shadow:       rgba(0, 0, 0, 0.08);
+  // header
+  --header-back:      var(--brand-30);
+  --header-text:      var(--grey20-60);
+  --header-link:      var(--grey20-80);
+  --header-hover:     var(--brand-95);
+  --header-border:    var(--brand-20);
+  // app
+  --app-back:         var(--grey-70);
+  --main-back:        var(--grey-90);
+  --side-back:        var(--grey-80);
+  --side-border:      var(--grey-60);
+  // sidebar menu
+  --menu-head:        var(--grey-30);
+  --menu-head-hover:  var(--grey-10);
+  --menu-item-text:   var(--grey-40);
+  --menu-item-back:   var(--grey-85);
+  --menu-hover-text:  var(--grey-20);
+  --menu-hover-back:  var(--grey-90);
+  --menu-active-text: var(--grey-0);
+  --menu-active-back: var(--grey-95);
+  // footer
+  --footer-back:      var(--brand-20);
+  --footer-text:      var(--grey20-45);
+  --footer-link:      var(--grey40-50);
+  --footer-hover:     var(--grey40-70);
+  --footer-border:    var(--brand-20);
+}
+
+#{$dark-theme} {
+  --body-back:        var(--grey20-0);
+  --body-text:        var(--grey20-80);
+  --bold-text:        var(--grey20-90);
+  --head-text:        var(--grey20-90);
+  --link-text:        var(--brand-50);
+  --link-hover:       var(--brand-60);
+  --side-shadow:      rgba(0, 0, 0, 0.2);
+  --top-shadow:       rgba(0, 0, 0, 0.15);
+  // header
+  --header-back:      var(--brand-20);
+  --header-text:      var(--grey20-50);
+  --header-link:      var(--grey20-70);
+  --header-hover:     var(--brand-95);
+  --header-border:    var(--brand-0);
+
+  // app
+  --app-back:         var(--grey-0);
+  --main-back:        var(--grey-15);
+  --side-back:        var(--grey-10);
+  --side-border:      var(--grey-30);
+  // sidebar menu
+  --menu-head:        var(--grey-70);
+  --menu-head-hover:  var(--grey-90);
+  --menu-item-text:   var(--grey-60);
+  --menu-item-back:   var(--grey-15);
+  --menu-hover-text:  var(--grey-70);
+  --menu-hover-back:  var(--grey-20);
+  --menu-active-text: var(--grey-100);
+  --menu-active-back: var(--grey-25);
+  // footer
+  --footer-back:      var(--brand-5);
+  --footer-text:      var(--grey20-30);
+  --footer-link:      var(--grey40-30);
+  --footer-hover:     var(--grey40-50);
+  --footer-border:    var(--brand-0);
+}

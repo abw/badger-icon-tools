@@ -1,0 +1,49 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
+
+$brand-hue:   14;
+$brand-color: 'brown';
+$brand-colors: (
+  brand: $brand-color,
+) !default;
+
+
+// Load the Badger CSS styles
+// See https://abw.github.io/badger-css/
+@import '@abw/badger-css/styles/badger.scss';
+
+// Load the night-and-day switcher styles
+// See https://abw.github.io/react-night-and-day/
+@import '@abw/react-night-and-day/styles/night-and-day.css';
+
+// Load the additional badger-react-ui styles
+// @import '@abw/badger-react-ui/styles/badger-react-ui.scss';
+
+// Load the site-specific styles
+@import "config/all.scss";
+@import "modules/all.scss";
+
+.bit-logo {
+  --badger: var(--brand-30);
+  --icon-tools: var(--brand-60);
+  .white {
+    fill: var(--brand-100);
+  }
+  .black {
+    fill: var(--brand-0);
+  }
+  .badger {
+    fill: var(--badger);
+  }
+  .icon-tools {
+    fill: var(--icon-tools);
+  }
+}
+
+#{$dark-theme} {
+  color-scheme: dark;
+  .bit-logo {
+    --badger: var(--brand-60);
+    --icon-tools: var(--brand-70);
+  }
+}

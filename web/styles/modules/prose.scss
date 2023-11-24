@@ -1,0 +1,29 @@
+.prose {
+  --prose-width: calc(50% - 1rem);
+}
+.prose .example {
+  --prose-width: 100%;
+}
+.wide {
+  --prose-width: 100%;
+}
+
+.Xcols-2:not(.wide) {
+  --orphans: 3;
+  columns: 2;
+  column-gap: 2rem;
+  orphans: var(--orphans);
+  p {
+    orphans: var(--orphans);
+  }
+}
+
+@media only screen and (max-width: $laptop) {
+  .cols-2 {
+    --columns: 1 !important;
+    // columns: 1 !important;
+  }
+  .prose > p {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,8 @@
+## using npm
+$ npm add -D @abw/badger-icon-tools
+
+## using yarn
+$ yarn add -D @abw/badger-icon-tools
+
+## using pnpm
+$ pnpm add -D @abw/badger-icon-tools

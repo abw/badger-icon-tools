@@ -1,0 +1,10 @@
+sets:
+  # solid:
+  #   - check
+  #   - square-check
+  #   - circle-check
+  custom: '*'
+
+# icons:
+  # fa-check:     solid:check
+  # ring-circle:  regular:circle-check
