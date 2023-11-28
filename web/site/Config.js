@@ -3,5 +3,5 @@
 // options in vite.config.js
 
 /* eslint-disable no-undef */
-export const VERSION = SITE_VERSION
-export const DATE    = SITE_DATE
+export const VERSION = MODULE_VERSION
+export const DATE    = MODULE_DATE

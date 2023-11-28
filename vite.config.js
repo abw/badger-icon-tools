@@ -1,10 +1,11 @@
-import { defineConfig }  from 'vite'
-import jsconfigPaths     from 'vite-jsconfig-paths'
-import react             from '@vitejs/plugin-react'
-import define            from  './vite.defs.js'
+import { defineConfig } from 'vite'
+import jsconfigPaths    from 'vite-jsconfig-paths'
+import react            from '@vitejs/plugin-react'
+import define           from  './vite.defs.js'
+import copy             from 'rollup-plugin-copy'
 
-const NAME   = `badger-icon-tools`
-const MODULE = `abw/${NAME}`
+const MODULE_NAME = `badger-icon-tools`
+const MODULE_DIST = `@abw/${MODULE_NAME}`
 
 export default defineConfig({
   plugins: [
@@ -24,8 +25,8 @@ export default defineConfig({
     sourcemap: false,
     lib: {
       entry: 'lib/index.js',
-      name: MODULE,
-      fileName: NAME,
+      name: MODULE_DIST,
+      fileName: MODULE_NAME,
     },
     rollupOptions: {
       external: [
@@ -44,6 +45,32 @@ export default defineConfig({
           'node:crypto': 'crypto'
         },
       },
+      plugins: [
+        copy({
+          targets: [
+            {
+              src: 'styles/*',
+              dest: 'dist/styles',
+            },
+            {
+              src: 'bin/badger-icon-tools.js',
+              dest: 'dist/bin',
+              transform: (contents) =>
+                contents
+                  .toString()
+                  .replace(
+                    "'MODULE_VERSION'",
+                    define.MODULE_VERSION
+                  )
+                  .replace(
+                    '../lib/index.js',
+                    MODULE_DIST
+                  )
+            },
+          ],
+          hook: 'writeBundle'
+        })
+      ]
     },
   },
 })
