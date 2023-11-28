@@ -1,5 +1,11 @@
 sets:
-  fa6:
-    - one
-    - two
-    - three
+  fa6-solid:
+    - apple-whole
+    - briefcase-medical as medkit
+    - bug
+    - bucket
+    - dog
+    - anus
+
+icons:
+  medkit: fa6-solid:briefcase-medical

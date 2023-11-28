@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import { runCommand } from '../lib/index.js'
+import { buildLibrary, runCommand } from '../lib/index.js'
 
-await runCommand(
-  config => console.log(`config: `, config)
-)
+await runCommand(buildLibrary)

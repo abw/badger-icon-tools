@@ -28,6 +28,7 @@ specifiers:
   react-syntax-highlighter: ^15.5.0
   rollup-plugin-copy: ^3.5.0
   sass: ^1.69.5
+  svg-parser: ^2.0.4
   vite: ^4.5.0
   vite-jsconfig-paths: ^2.0.1
   vite-plugin-svgr: ^4.1.0
@@ -39,6 +40,7 @@ dependencies:
   '@abw/badger-filesystem': 1.0.5
   '@abw/badger-utils': 1.0.21
   '@iconify/tools': 3.0.6
+  svg-parser: 2.0.4
 
 devDependencies:
   '@abw/badger-css': 0.2.8
@@ -3986,7 +3988,6 @@ packages:
 
   /svg-parser/2.0.4:
     resolution: {integrity: sha512-e4hG1hRwoOdRb37cIMSgzNsxyzKfayW6VOflrwvR+/bzrkyxY/31WkbgnQpgtrNp1SdpJvpUAGTa/ZoiPNDuRQ==}
-    dev: true
 
   /svgo/3.0.4:
     resolution: {integrity: sha512-T+Xul3JwuJ6VGXKo/p2ndqx1ibxNKnLTvRc1ZTWKCfyKS/GgNjRZcYsK84fxTsy/izr91g/Rwx6fGnVgaFSI5g==}

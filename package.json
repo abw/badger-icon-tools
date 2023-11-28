@@ -41,7 +41,8 @@
     "@abw/badger-codecs": "^1.0.3",
     "@abw/badger-filesystem": "^1.0.5",
     "@abw/badger-utils": "^1.0.21",
-    "@iconify/tools": "^3.0.6"
+    "@iconify/tools": "^3.0.6",
+    "svg-parser": "^2.0.4"
   },
   "devDependencies": {
     "@abw/badger-css": "^0.2.8",
