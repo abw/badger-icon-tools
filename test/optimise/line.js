@@ -29,6 +29,15 @@ test(
 )
 
 test(
+  'optimise line with fill currentColor',
+  () => expect(
+    optimiseLine({ x1: 100, y1: 200, x2: 50, y2: 40, fill: 'currentColor' })
+  ).toEqual(
+    'line-solid:100 200 50 40'
+  )
+)
+
+test(
   'optimise line with style - not optimised',
   () => expect(
     optimiseLine({ x1: 100, y1: 200, x2: 50, y2: 40, style: 'bar' })

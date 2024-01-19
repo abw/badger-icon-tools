@@ -20,6 +20,15 @@ test(
 )
 
 test(
+  'optimise path with fill currentCOlor',
+  () => expect(
+    optimisePath({ d: 'M100 200L300 400', fill: 'currentColor' })
+  ).toEqual(
+    'path-solid:M100 200L300 400'
+  )
+)
+
+test(
   'optimise path with style - not optimised',
   () => expect(
     optimisePath({ d: 'M100 200L300 400', style: 'wibble' })

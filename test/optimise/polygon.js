@@ -20,6 +20,15 @@ test(
 )
 
 test(
+  'optimise polygon with fill currentColor',
+  () => expect(
+    optimisePolygon({ points: '100,200 300,400', fill: 'currentColor' })
+  ).toEqual(
+    'polygon-solid:100,200 300,400'
+  )
+)
+
+test(
   'optimise polygon with style - not optimised',
   () => expect(
     optimisePolygon({ points: '100,200 300,400', style: 'bar' })

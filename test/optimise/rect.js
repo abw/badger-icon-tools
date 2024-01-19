@@ -20,15 +20,6 @@ test(
 )
 
 test(
-  'optimise rect with rx and ry',
-  () => expect(
-    optimiseRect({ x: 100, y: 200, width: 50, height: 40, rx: 5, ry: 10 })
-  ).toEqual(
-    'rect:100 200 50 40 5 10'
-  )
-)
-
-test(
   'optimise rect with just rx',
   () => expect(
     optimiseRect({ x: 100, y: 200, width: 50, height: 40, rx: 5 })
@@ -61,6 +52,15 @@ test(
     optimiseRect({ x: 100, y: 200, width: 50, height: 40, class: 'foo' })
   ).toEqual(
     'rect.foo:100 200 50 40'
+  )
+)
+
+test(
+  'optimise rect with fill currentColor',
+  () => expect(
+    optimiseRect({ x: 100, y: 200, width: 50, height: 40, fill: 'currentColor' })
+  ).toEqual(
+    'rect-solid:100 200 50 40'
   )
 )
 

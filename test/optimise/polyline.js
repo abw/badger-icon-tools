@@ -20,6 +20,15 @@ test(
 )
 
 test(
+  'optimise polyline with fill currentColor',
+  () => expect(
+    optimisePolyline({ points: '100,200 300,400', fill: 'currentColor' })
+  ).toEqual(
+    'polyline-solid:100,200 300,400'
+  )
+)
+
+test(
   'optimise polyline with style - not optimised',
   () => expect(
     optimisePolyline({ points: '100,200 300,400', style: 'bar' })

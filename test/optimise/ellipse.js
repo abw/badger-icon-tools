@@ -20,6 +20,15 @@ test(
 )
 
 test(
+  'optimise ellipse with fill currentColor',
+  () => expect(
+    optimiseEllipse({ cx: 100, cy: 200, rx: 50, ry: 40, fill: 'currentColor' })
+  ).toEqual(
+    'ellipse-solid:100 200 50 40'
+  )
+)
+
+test(
   'optimise ellipse with style - not optimised',
   () => expect(
     optimiseEllipse({ cx: 100, cy: 200, rx: 50, ry: 40, style: 'bar' })
